@@ -1,0 +1,33 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Shared Array Buffer Example</title>
+    <meta charset="UTF-8">
+    <meta name="sharedArrayBuffer" description="using cross-orgiin-isolation in the web browser">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <h3>messages</h3>
+    <ul class="messages"></ul>
+    <script type="text/JavaScript">
+        var native = window;
+        var originalConsole = native.console;
+        native.console = {
+            log: function(message){
+                $('ul.messages').append('<li>Log: ' + message + '</li>');
+                originalConsole.log(message);
+            },
+            error: function(message){
+                $('ul.messages').append('<li>Error: ' + message + '</li>');
+                originalConsole.error(message);
+            },
+            warn: function(message){
+                $('ul.messages').append('<li>Warn: ' + message + '</li>');
+                originalConsole.warn(message);
+            }
+        }
+    </script>
+    <script type="text/JavaScript" src="main.js"></script>
+    <script type="text/JavaScript" src="worker.js"></script>
+</body>
+</html>
