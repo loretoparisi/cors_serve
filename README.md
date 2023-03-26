@@ -1,5 +1,8 @@
 # cors_serve
 CORS Serving with Python HTTP.
+
+![cors_serve-256](https://user-images.githubusercontent.com/163333/227802165-ba4ccdbd-8c99-424a-a516-17db0107e162.png)
+
 The command `cors_serve` replaces `python -m http.serve` adding necessary scaffholding to support CORS.
 
 ## Why cors_serve
